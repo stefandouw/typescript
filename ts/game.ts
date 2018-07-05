@@ -36,6 +36,7 @@ class Game {
 
     // Eerst wordt gecontroleerd of de 'keydown' event de spatiebalk betreft.
     if (e.keyCode === 32) {
+      console.log('spacebar is being pressed');
 
       // Vervolgens wordt de jump methode aangeroepen van de bunny class die
       // de bunny laat springen op het beeldscherm.
@@ -44,6 +45,7 @@ class Game {
       // Daarna wordt gecontroleerd of de bunny dezelfde x coordinaten heeft
       // als de carrot wanneer de bunny springt (met marge).
       if (bunnyX > carrotX - 30 && bunnyX < carrotX + 30) {
+        console.log('X coordinates approximately the same');
 
         // Wanneer dat zo is wordt de locatie van de carrot veranderd en 
         // de score met +1 verhoogt.

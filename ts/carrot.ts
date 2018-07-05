@@ -27,6 +27,7 @@ class Carrot {
     public update() {
         this._xPos = (this.randomXPos());
         this._e.style.transform = `translate(${this._xPos}px)`;
+        console.log('new carrot position');
     }
 
     // De randomXPos methode retourneert een willekeurig heel getal tussen de 0

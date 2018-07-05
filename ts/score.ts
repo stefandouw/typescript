@@ -20,6 +20,7 @@ class Score {
     // Deze methode verhoogt de score met +1 en wordt geupdate door opnieuw
     // de waarde van het private element toe te kennen in de HTML.
     public increaseScore() {
+        console.log('score increased');
         this._score++;
         this._element.innerHTML = String(this._score);
     }

@@ -33,6 +33,7 @@ class Bunny {
 
   // De jump methode laat de bunny omhoog springen.
   public jump(): void {
+    console.log('bunny jumps');
 
     // Eerst wordt de booleaanse waarde veranderd naar 'true', wat nodig is voor
     // de loop methode die hierna wordt uitgelegd. 
@@ -88,11 +89,13 @@ class Bunny {
     // wordt de x waarde elke loop verhoogd met 20 pixels.
     if (this._xPos == 0) {
       this._direction = +20;
+      console.log('direction is now positive');
 
       // Wanneer de uiterste rechtse hoek wordt bereikt (hier als 1280 bepaald), wordt
       // de x waarde elke loop met 20 pixels verlaagt.
     } else if (this._xPos == 1280) {
       this._direction = -20;
+      console.log('direction is now negative');
     }
   }
 

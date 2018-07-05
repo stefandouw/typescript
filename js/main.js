@@ -19,6 +19,7 @@ var Bunny = (function () {
     };
     Bunny.prototype.jump = function () {
         var _this = this;
+        console.log('bunny jumps');
         this._jump = true;
         this._yPos = 250;
         this.update();
@@ -43,9 +44,11 @@ var Bunny = (function () {
     Bunny.prototype.setDirection = function () {
         if (this._xPos == 0) {
             this._direction = +20;
+            console.log('direction is now positive');
         }
         else if (this._xPos == 1280) {
             this._direction = -20;
+            console.log('direction is now negative');
         }
     };
     Bunny.prototype.getXPos = function () {
@@ -67,6 +70,7 @@ var Carrot = (function () {
     Carrot.prototype.update = function () {
         this._xPos = (this.randomXPos());
         this._e.style.transform = "translate(" + this._xPos + "px)";
+        console.log('new carrot position');
     };
     Carrot.prototype.randomXPos = function () {
         return Math.floor(Math.random() * Math.floor(1150));
@@ -83,8 +87,10 @@ var Game = (function () {
             var bunnyX = _this._bunny.getXPos();
             var carrotX = _this._carrot.getXPos() + 90;
             if (e.keyCode === 32) {
+                console.log('spacebar is being pressed');
                 _this._bunny.jump();
                 if (bunnyX > carrotX - 30 && bunnyX < carrotX + 30) {
+                    console.log('X coordinates approximately the same');
                     _this._carrot.update();
                     _this._score.increaseScore();
                 }
@@ -118,6 +124,7 @@ var Score = (function () {
         score.appendChild(this._element);
     };
     Score.prototype.increaseScore = function () {
+        console.log('score increased');
         this._score++;
         this._element.innerHTML = String(this._score);
     };
