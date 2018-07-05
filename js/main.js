@@ -63,7 +63,6 @@ var Carrot = (function () {
         this._e.className = 'carrot';
         container.appendChild(this._e);
         this.update();
-        console.log(this._e.width / 2);
     };
     Carrot.prototype.update = function () {
         this._xPos = (this.randomXPos());
